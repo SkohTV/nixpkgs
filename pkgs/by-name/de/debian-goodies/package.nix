@@ -7,6 +7,7 @@
   installShellFiles,
   perl,
   python3,
+  dctrl-tools,
 }:
 
 stdenv.mkDerivation rec {
@@ -28,6 +29,9 @@ stdenv.mkDerivation rec {
 
     substituteInPlace dman \
       --replace "curl" "${curl}/bin/curl"
+
+    substituteInPlace dpigs \
+      --replace "grep-status" "${dctrl-tools}/bin/grep-status"
   '';
 
   nativeBuildInputs = [
@@ -37,6 +41,7 @@ stdenv.mkDerivation rec {
   buildInputs = [
     perl
     python3
+    dctrl-tools
   ];
 
   installPhase = ''
