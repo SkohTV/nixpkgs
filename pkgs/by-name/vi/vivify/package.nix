@@ -18,7 +18,7 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "jannis-baum";
     repo = "Vivify";
-    tag = "v${finalAttrs.version}";
+    tag = v${finalAttrs.version}";
     hash = "sha256-CszMG+c0bNHfXWqcI3b4iGpeFJ+FmzHDzxflPS+wEe0=";
   };
 
